@@ -1,0 +1,30 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "webshopx-relay",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-06-30",
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "SERVER_ROOMS",
+        "class_name": "ServerRoom"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["ServerRoom"]
+    }
+  ],
+  "vars": {
+    "PUBLIC_APP_NAME": "WebShopX",
+    "DEFAULT_SERVER_ID": "main",
+    "PUBLIC_CACHE_SECONDS": "15",
+    "RPC_TIMEOUT_MS": "10000"
+  }
+}
